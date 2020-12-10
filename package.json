@@ -1,0 +1,20 @@
+{
+  "name": "hof",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clear": "rimraf dist",
+    "compile": "tsc",
+    "copy": "copyfiles -u 1 src/types/**/*d.ts dist",
+    "build": "npm run clear && npm run compile && npm run copy",
+    "start": "tsc index.ts --outDir . && node ./index.js"
+  },
+  "dependencies": {
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2"
+  }
+}
