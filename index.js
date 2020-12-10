@@ -6,14 +6,16 @@ const people = [
   { name: "Karen Doe", age: 43, gender: "F" },
 ];
 
-function my_map(array) {
+function my_map(array, callback) {
   const returnedArray = [];
+
   for (let i = 0; i < array.length; i++) {
     const person = array[i];
-    returnedArray.push(person.name);
+    returnedArray.push(callback(person));
   }
   return returnedArray;
 }
 
-const A = my_map(people);
+const A = my_map(people, (person) => person.name);
+
 const B = people.map((person) => person.name);
